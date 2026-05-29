@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lorem Ipsum Generator</title>
 
-  <meta name="description" content="Generate lorem ipsum placeholder text in Latin, English, and Finnish. Customize by paragraphs, sentences, or words." />
+  <meta name="description" content="Generate lorem ipsum placeholder text in Latin, English, and Finnish." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lorem Ipsum Generator" />
-  <meta property="og:description" content="Generate placeholder text in Latin, English, and Finnish. Customize by paragraphs, sentences, or words." />
+  <meta property="og:description" content="Generate placeholder text in Latin, English, and Finnish." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lorem.jeme.app/" />
   <meta property="og:image" content="https://lorem.jeme.app/og-image.png" />
@@ -20,159 +20,10 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lorem Ipsum Generator" />
-  <meta name="twitter:description" content="Generate placeholder text in Latin, English, and Finnish. Customize by paragraphs, sentences, or words." />
+  <meta name="twitter:description" content="Generate placeholder text in Latin, English, and Finnish." />
   <meta name="twitter:image" content="https://lorem.jeme.app/og-image.png" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg: #f5f4f0;
-      --surface: #ffffff;
-      --border: #e0ddd6;
-      --accent: #2c6e49;
-      --accent-hover: #1e4f34;
-      --text: #1a1a1a;
-      --muted: #6b6b6b;
-      --radius: 8px;
-    }
-
-    body {
-      font-family: 'Georgia', serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 1.5rem 1rem;
-    }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      font-weight: normal;
-      letter-spacing: -0.5px;
-      color: var(--text);
-    }
-
-    header p {
-      color: var(--muted);
-      margin-top: 0.4rem;
-      font-size: 1rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-    }
-
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      flex: 1 1 140px;
-    }
-
-    .field label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      font-family: system-ui, sans-serif;
-    }
-
-    .field select {
-      font-size: 1rem;
-      padding: 0.6rem 2rem 0.6rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b6b6b' d='M6 8L0 0h12z'/%3E%3C/svg%3E") no-repeat right 0.65rem center;
-      color: var(--text);
-      appearance: none;
-      outline: none;
-      transition: border-color 0.15s;
-      font-family: system-ui, sans-serif;
-      width: 100%;
-      min-height: 44px;
-      cursor: pointer;
-    }
-
-    .field select:focus { border-color: var(--accent); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: var(--radius);
-      font-size: 0.9rem;
-      font-family: system-ui, sans-serif;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-      min-height: 44px;
-      touch-action: manipulation;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--muted);
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:active { border-color: var(--accent); color: var(--accent); }
-
-    .btn-actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .output-area {
-      width: 100%;
-      min-height: 260px;
-      border: none;
-      outline: none;
-      resize: vertical;
-      font-family: 'Georgia', serif;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--text);
-      background: transparent;
-      padding: 0;
-    }
-
-    .output-area::placeholder { color: #c0bdb5; }
-
-    .copy-feedback {
-      font-size: 0.8rem;
-      color: var(--accent);
-      font-family: system-ui, sans-serif;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .copy-feedback.show { opacity: 1; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -181,135 +32,27 @@
       <p>Generate placeholder text in multiple languages</p>
     </header>
 
-    <div class="card controls-card">
-      <div class="controls">
-        <div class="field">
-          <label for="lang">Language</label>
-          <select id="lang" onchange="generate()">
-            <option value="la">Latin</option>
-            <option value="en">English</option>
-            <option value="fi">Finnish</option>
-          </select>
-        </div>
+    <div class="card">
+      <div class="field">
+        <label for="lang">Language</label>
+        <select id="lang" onchange="generate()">
+          <option value="la">Latin</option>
+          <option value="en">English</option>
+          <option value="fi">Finnish</option>
+        </select>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card output-card">
       <textarea class="output-area" id="output" readonly placeholder="Your generated text will appear here…"></textarea>
       <div class="btn-actions">
-        <button class="btn btn-secondary" onclick="copyText()">Copy</button>
-        <button class="btn btn-secondary" onclick="generate()">Regenerate</button>
+        <button class="btn" onclick="copyText()">Copy</button>
+        <button class="btn" onclick="generate()">Regenerate</button>
         <span class="copy-feedback" id="copyFeedback">Copied!</span>
       </div>
     </div>
-
   </div>
 
-  <script>
-    const WORDS = {
-      la: [
-        "lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do",
-        "eiusmod","tempor","incididunt","labore","dolore","magna","aliqua","enim","ad","minim",
-        "veniam","quis","nostrud","exercitation","ullamco","laboris","nisi","aliquip","commodo",
-        "consequat","duis","aute","irure","reprehenderit","voluptate","velit","esse","cillum",
-        "fugiat","nulla","pariatur","excepteur","sint","occaecat","cupidatat","non","proident",
-        "culpa","qui","officia","deserunt","mollit","anim","id","est","laborum","perspiciatis",
-        "unde","omnis","iste","natus","accusantium","doloremque","laudantium","totam","rem",
-        "aperiam","eaque","ipsa","quae","inventore","veritatis","quasi","architecto","beatae",
-        "vitae","dicta","explicabo","nemo","ipsam","quia","voluptas","aspernatur","odit","fugit",
-        "magni","dolores","eos","ratione","sequi","nesciunt","neque","porro","quisquam","dolorem",
-        "adipisci","numquam","eius","modi","tempora","incidunt","magnam","quaerat","soluta"
-      ],
-      en: [
-        "the","be","to","of","and","a","in","that","have","it","for","not","on","with","he",
-        "as","you","do","at","this","but","his","by","from","they","we","say","her","she","or",
-        "an","will","my","one","all","would","there","their","what","so","up","out","if","about",
-        "who","get","which","go","me","when","make","can","like","time","no","just","him","know",
-        "take","people","into","year","your","good","some","could","them","see","other","than",
-        "then","now","look","only","come","its","over","think","also","back","after","use","two",
-        "how","our","work","first","well","way","even","new","want","because","any","these",
-        "give","day","most","between","need","large","often","hand","high","place","hold","great",
-        "world","still","own","while","last","might","next","thing","both","point","small","number",
-        "off","always","move","live","happen","show","around","form","three","small","set","put",
-        "end","does","another","well","large","often","tell","why","let","something","here","turn",
-        "help","start","same","she","find","long","down","side","been","few","since","example",
-        "came","where","right","ask","state","much","before","old","sentence","city","play"
-      ],
-      fi: [
-        "ja","on","ei","se","hän","että","oli","mutta","kun","niin","olla","kaikki","olla","jo",
-        "sitten","vaan","vielä","joka","sinä","minä","mitä","tai","nyt","kuin","ennen","kaksi",
-        "hyvin","uusi","tämä","voida","aika","saada","suuri","maa","mies","paljon","tulla","sama",
-        "täytyy","ottaa","tehdä","paikka","kansa","asia","vuosi","tietää","sanoa","pitää","jälkeen",
-        "myös","löytää","antaa","henkilö","päivä","työ","kaupunki","hyvä","pieni","mennä","nähdä",
-        "käyttää","ilman","voi","elämä","maailma","sinulle","kysymys","tärkeä","aina","pitkä",
-        "koti","jokainen","miten","miksi","osa","tapa","viime","nimi","asia","kuulla","alla",
-        "koska","täällä","kolme","lähellä","uudelleen","enemmän","vähemmän","tarvita","haluaa",
-        "ajatella","odottaa","kirjoittaa","lukea","puhua","ymmärtää","tuntea","näyttää","mennä",
-        "tulla","lähteä","jäädä","istua","seistä","nousta","laskea","avata","sulkea","katsoa",
-        "kuunnella","vastata","kysyä","kertoa","muistaa","unohtaa","oppia","opettaa","tehdä"
-      ]
-    };
-
-    function rand(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function shuffle(arr) {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    function pickWords(lang, count) {
-      const pool = WORDS[lang];
-      const result = [];
-      while (result.length < count) {
-        result.push(...shuffle(pool).slice(0, Math.min(pool.length, count - result.length)));
-      }
-      return result.slice(0, count);
-    }
-
-    function makeSentence(lang, wordCount) {
-      const words = pickWords(lang, wordCount);
-      words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
-      const punctuation = Math.random() < 0.85 ? '.' : (Math.random() < 0.5 ? '!' : '?');
-      return words.join(' ') + punctuation;
-    }
-
-    function makeParagraph(lang) {
-      const sentenceCount = rand(4, 8);
-      const sentences = [];
-      for (let i = 0; i < sentenceCount; i++) {
-        sentences.push(makeSentence(lang, rand(6, 18)));
-      }
-      return sentences.join(' ');
-    }
-
-    function generate() {
-      const lang = document.getElementById('lang').value;
-      const count = 10;
-      const paras = [];
-      for (let i = 0; i < count; i++) {
-        paras.push(makeParagraph(lang));
-      }
-      const result = paras.join('\n\n');
-      document.getElementById('output').value = result;
-    }
-    function copyText() {
-      const text = document.getElementById('output').value;
-      if (!text) return;
-      navigator.clipboard.writeText(text).then(() => {
-        const fb = document.getElementById('copyFeedback');
-        fb.classList.add('show');
-        setTimeout(() => fb.classList.remove('show'), 1800);
-      });
-    }
-
-    // Generate on load
-    generate();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
